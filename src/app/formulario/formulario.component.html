@@ -1,0 +1,43 @@
+<div class="card">
+    <div class="card-body">
+        <form (ngSubmit)="procesar()" #formContact="ngForm">
+            <div class="mb-2">
+                    <label class="form-label">
+                        Por favor ingrese su nombre:
+                    </label>
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre:" [(ngModel)]="persona.nombre" required #name = "ngModel">
+                </div>
+                <div class="alert alert-danger mb-2" [hidden]="name.valid || name.pristine">
+                        El nombre es obligatorio
+                </div>
+                <div>
+                    <label class="form-label">
+                        Por favor ingrese su edad:
+                    </label>
+                    <input type="number" name="edad" class="form-control mb-2" placeholder="Edad (en números):"[(ngModel)]="persona.edad" required #edad="ngModel">
+                    <div class="alert alert-danger mb-2" [hidden]="edad.valid || edad.pristine">
+                            La edad es obligatoria
+                    </div>
+                    <div class="mb-2">
+                    <label class="form-label">
+                        Ingrese la fecha de expedición de su documento:
+                    </label>
+                    <input type="date" name="fecha" class="form-control" placeholder="Fecha de expedición" [(ngModel)]="persona.fechaExpedicion" required #fechaExpedicion = "ngModel">
+                </div>
+                <div class="alert alert-danger mb-2" [hidden]="fechaExpedicion.valid || fechaExpedicion.pristine">
+                        La fecha de expedición de su cédula es obligatoria
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                <button class="btn btn-primary" [disabled]="formContact.invalid">
+                    enviar
+                </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{{name.value}}
+
+
+

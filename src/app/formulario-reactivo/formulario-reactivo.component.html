@@ -24,6 +24,15 @@
                      El email es debe ser válido
                 </span>
             </div>
+            <div class="mb-2">
+                <label>
+                    Número de cédula
+                </label>
+                <input type="number" formControlName="cedula" class="form-control" placeholder="Ingrese su número de identificación">
+            </div>
+            <div class="alert alert-danger mb-2" [hidden]="cedula.valid || cedula.pristine">
+                El número de identificación es obligatorio
+            </div>
             <div class="d-flex justify-content-center mt-3">
             <button class="btn btn-primary" [disabled]="formUser.invalid">
                 Enviar

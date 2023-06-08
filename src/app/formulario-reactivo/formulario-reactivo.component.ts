@@ -18,7 +18,8 @@ export class FormularioReactivoComponent implements OnInit {
   //Forma mejorada para crear los grupos, luego de inyectar en el constructor la propiedad FormBuilder, esto nos permite no tener que instanciar cada objeto mediante el ''= new FormControl", sino que únicamente se pone una cadena vacía y sus validaciones dentro del array que acabamos de crear
   formUser = this.fb.group({
     'name': ['', Validators.required],
-    'email': ['', [Validators.required, Validators.email]]
+    'email': ['', [Validators.required, Validators.email]],
+    'cedula': ['', Validators.required]
   });
 
   //CREAMOS GETTERS PARA CADA CAMPO DE LOS INPUTS, PARA NO ENSUCIAR EL CÓDIGO HTML
@@ -31,6 +32,10 @@ export class FormularioReactivoComponent implements OnInit {
   get email() {
     return this.formUser.get('email') as FormControl;
   }
+  get cedula() {
+    return this.formUser.get('cedula') as FormControl
+  }
+
 
   //Creamos la función procesarDatos, que se encargará de imprimir en consola los valores que tengamos almacenados en el formUser al momento de hacer click en enviar. En la vista, esta función se pone dentro del form padre, mediante (ngSubmit)="procesarDatos()"
   procesarDatos() {
@@ -38,7 +43,8 @@ export class FormularioReactivoComponent implements OnInit {
     this.RefrescarDatos();
   }
   RefrescarDatos() {
-    this.router.navigate(['/app-root']);
+    this.router.navigate(['/formulario-reactivo']);
+    this.formUser.reset();
   }
 
 

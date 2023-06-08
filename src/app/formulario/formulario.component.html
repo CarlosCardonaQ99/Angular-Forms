@@ -27,6 +27,16 @@
                 <div class="alert alert-danger mb-2" [hidden]="fechaExpedicion.valid || fechaExpedicion.pristine">
                         La fecha de expedición de su cédula es obligatoria
                 </div>
+                <div class="mb-2">
+                    <label class="form-label">
+                        Por favor ingrese su número de cédula:
+                    </label>
+                    <input type="number" name="cedula" class="form-control" placeholder="Ingrese su número de documento:" [(ngModel)]="persona.cedula" required
+                        #cedula="ngModel">
+                </div>
+                <div class="alert alert-danger mb-2" [hidden]="cedula.valid || cedula.pristine">
+                    El número de documento es obligatorio
+                </div>
                 <div class="d-flex justify-content-center mt-3">
                 <button class="btn btn-primary" [disabled]="formContact.invalid">
                     enviar
@@ -37,7 +47,6 @@
     </div>
 </div>
 
-{{name.value}}
 
 
 

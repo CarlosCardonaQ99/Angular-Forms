@@ -6,7 +6,7 @@ import { FormularioReactivoComponent } from './formulario-reactivo/formulario-re
 
 const routes: Routes = [
     { path: 'formulario', component: FormularioComponent },
-     { path: '', redirectTo: 'app-root', pathMatch: 'full' },
+    { path: '', redirectTo: 'app-root', pathMatch: 'full' },
     { path: 'formulario-reactivo', component: FormularioReactivoComponent },
 ];
 

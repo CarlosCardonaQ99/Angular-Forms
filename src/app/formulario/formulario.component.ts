@@ -10,7 +10,8 @@ export class FormularioComponent implements OnInit {
   persona = {
     nombre: '',
     edad: '',
-    fechaExpedicion: ''
+    fechaExpedicion: '',
+    cedula: '',
   };
 
   procesar() {
